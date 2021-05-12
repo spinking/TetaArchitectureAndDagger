@@ -1,3 +1,5 @@
+import Config.implMap
+
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -27,19 +29,11 @@ android {
     }
 }
 
-fun String.get() =  rootProject.extra[this]
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":core:common_utils"))
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${"kotlin_ver".get()}")
-    implementation("androidx.core:core-ktx:${"ktx_ver".get()}")
-    implementation("androidx.appcompat:appcompat:${"appcompat_ver".get()}")
-    testImplementation("junit:junit:${"junit_ver".get()}")
-    androidTestImplementation("androidx.test.ext:junit:${"junit_test_ver".get()}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${"espresso_ver".get()}")
-
-    compileOnly("javax.annotation:jsr250-api:${"jsr250_ver".get()}")
-    implementation("com.google.dagger:dagger:${"dagger_ver".get()}")
-    kapt("com.google.dagger:dagger-compiler:${"dagger_ver".get()}")
+    implMap(androidLibs)
+    implMap(testLibs)
+    implMap(diLibs)
+    implMap(javaRxLibs)
 }

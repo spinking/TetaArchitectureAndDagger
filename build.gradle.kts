@@ -1,23 +1,4 @@
 buildscript {
-    //android
-    val kotlin_ver by extra("1.4.30")
-    val ktx_ver by extra("1.3.2")
-    val gradle_ver by extra("4.0.2")
-    val appcompat_ver by extra("1.2.0")
-    val material_ver by extra("1.3.0")
-    val constraintlayout_ver by extra("2.0.4")
-
-    //tests
-    val junit_ver by extra("4.12")
-    val junit_test_ver by extra("1.1.2")
-    val espresso_ver by extra("3.3.0")
-
-    //libs
-    val dagger_ver by extra("2.31.2")
-    val jsr250_ver by extra("1.0")
-    val rxJava_ver by extra("2.2.19")
-    val rxAndroid_ver by extra("2.1.1")
-    val cicerone_ver by extra("5.1.1")
 
     repositories {
         google()
@@ -26,10 +7,12 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:$gradle_ver")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_ver")
+        Config.project = rootProject // need to use empty extentions in buildSrc/.../Config.kt
+        classpath("com.android.tools.build:gradle:$gradleVer")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer")
+
         // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle.kts.kts.kts.kts.ktx files
+        // in the individual module build.gradle.kts.kts.kts.kts.kts.ktx files
     }
 }
 
