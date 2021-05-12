@@ -7,9 +7,9 @@ plugins {
 }
 
 android {
-    compileSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
 
     defaultConfig {
+        compileSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
         applicationId = rootProject.extra["appId"] as String
         minSdkVersion(rootProject.extra["minSdkVersion"] as Int)
         targetSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
