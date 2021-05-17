@@ -1,5 +1,4 @@
 import Config.implMap
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -7,15 +6,13 @@ plugins {
 }
 
 android {
-
+    compileSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
     defaultConfig {
-        compileSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
-        applicationId = rootProject.extra["appId"] as String
         minSdkVersion(rootProject.extra["minSdkVersion"] as Int)
         targetSdkVersion(rootProject.extra["compileSdkVersion"] as Int)
         versionCode = rootProject.extra["appVersionCode"] as Int
         versionName = rootProject.extra["appVersionName"] as String
-
+        testInstrumentationRunner = rootProject.extra["testInstrumentRunner"] as String
     }
 
     buildTypes {
@@ -63,8 +60,8 @@ android {
         implementation(project(":core:network"))
 
         implMap(androidLibs)
+        implMap(kotlinLibs)
         implMap(testLibs)
         implMap(diLibs)
-        implMap(javaRxLibs)
     }
 }

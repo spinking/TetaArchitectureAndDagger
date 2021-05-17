@@ -8,7 +8,7 @@ buildscript {
 
     dependencies {
         Config.project = rootProject // need to use empty extentions in buildSrc/.../Config.kt
-        classpath("com.android.tools.build:gradle:$gradleVer")
+        classpath("com.android.tools.build:gradle:$gradleConfVer")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer")
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -21,12 +21,12 @@ allprojects {
         google()
         jcenter()
     }
-    val minSdkVersion by extra(21)
-    val compileSdkVersion by extra(30)
-    val appVersionCode by extra(1)
-    val appVersionName by extra("1.0.0")
-    val testInstrumentRunner by extra("androidx.test.runner.AndroidJUnitRunner")
-    val appId by extra("com.example.new.dagger_arch")
+    val minSdkVersion by extra(minSdkVersionConf)
+    val compileSdkVersion by extra(compileSdkVersionConf)
+    val appVersionCode by extra(appVersionCodeConf)
+    val appVersionName by extra(appVersionNameConf)
+    val testInstrumentRunner by extra(testInstrumentRunnerConf)
+    val appId by extra(appIdConf)
 }
 
 task<Delete>("clean") {
