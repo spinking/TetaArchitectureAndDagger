@@ -1,13 +1,10 @@
 buildscript {
-
     repositories {
         google()
         jcenter()
         mavenCentral()
     }
-
     dependencies {
-        Config.project = rootProject // need to use empty extentions in buildSrc/.../Config.kt
         classpath("com.android.tools.build:gradle:$gradleConfVer")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVer")
 
@@ -32,4 +29,5 @@ allprojects {
 task<Delete>("clean") {
     delete(rootProject.buildDir)
 }
+
 

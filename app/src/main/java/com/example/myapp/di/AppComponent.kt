@@ -9,7 +9,7 @@ import javax.inject.Singleton
     modules = [ AppModule::class ]
 )
 @Singleton
-interface AppComponent : AppFeature {
+interface AppComponent : AppFeatureApi {
     fun inject(theApplication: App)
 
     interface Builder {

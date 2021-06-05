@@ -1,36 +1,38 @@
 package com.example.myapp.di
 
-import com.example.common_utils.logs.Logger
+import com.example.common_utils.config.ConfigProvider
 import com.example.common_utils.modul_injection.BaseFeatureAPI
 import com.example.common_utils.modul_injection.BaseFeatureDependencies
 import com.example.common_utils.modul_injection.ComponentHolder
 import com.example.common_utils.modul_injection.ComponentHolderDelegate
-import com.example.myapp.common.ApplicationProvider
+import com.example.common_utils.time_utils.TimeProvider
+import com.example.myapp.common.app.ApplicationProvider
 
-object AppComponentHolder : ComponentHolder<AppFeature, AppFeatureDependencies> {
+object AppComponentHolder : ComponentHolder<AppFeatureApi, AppFeatureDependencies> {
     private val componentHolderDelegate = ComponentHolderDelegate<
-            AppFeature,
-            AppFeatureDependencies,
-            AppComponent> {
+        AppFeatureApi,
+        AppFeatureDependencies,
+        AppComponent> {
         AppComponent.initAndGet(it)
     }
 
-    internal fun getComponent(): AppComponent = componentHolderDelegate.getComponentImpl()
+    // internal fun getComponent(): AppComponent = componentHolderDelegate.getComponentImpl()
 
     override var dependencyProvider: (() -> AppFeatureDependencies)? by componentHolderDelegate::dependencyProvider
 
-    override fun get(): AppFeature {
-        return getComponent()
-    }
+    override fun get(): AppFeatureApi = componentHolderDelegate.getComponentImpl()
 }
 
-interface AppFeature : BaseFeatureAPI {
-    val logger: Logger
-    //val generalSettingsRepositoryImpl: GeneralSettingsRepositoryImpl
-    //val weatherOnlineRepositoryImpl: WeatherOnlineRepositoryImpl
-    //val weatherOfflineRepositoryImpl: WeatherOfflineRepositoryImpl
-}
-
+// то что инициализируется в холдере
 interface AppFeatureDependencies : BaseFeatureDependencies {
     val appProvider: ApplicationProvider
+    val configProvider: ConfigProvider
+}
+
+//то что инициализируется в модуле или древе модулей
+interface AppFeatureApi : BaseFeatureAPI {
+    val timeProvider: TimeProvider
+    val configProvider: ConfigProvider
+
+
 }

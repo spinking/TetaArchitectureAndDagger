@@ -1,7 +1,7 @@
 package com.example.myapp.di
 
-import com.example.common_utils.logs.Logger
-import com.example.myapp.common.LoggerImpl
+import com.example.common_utils.time_utils.TimeProvider
+import com.example.common_utils.time_utils.TimeProviderImpl
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton
@@ -11,5 +11,5 @@ abstract class AppModule {
 
     @Singleton
     @Binds
-    abstract fun provideLogger(logger: LoggerImpl): Logger
+    abstract fun provideTimeProvider(timeProvider: TimeProviderImpl): TimeProvider
 }

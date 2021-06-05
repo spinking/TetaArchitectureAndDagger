@@ -1,15 +1,15 @@
 package com.example.myapp.app
 
 import android.app.Application
+import com.example.myapp.common.LoggerHandler
 
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
+        LoggerHandler.initTimber()
         DependencyHandler.initDependency(applicationContext)
 
-        // досоздать даггер
             // настроить навигатор гугл
-            // настроить вьюмодели
             // настроить корутины
             // настроить lce патерн и ретрофит
             // настроить livedata patern
