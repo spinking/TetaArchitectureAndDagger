@@ -19,9 +19,7 @@ import org.gradle.kotlin.dsl.dependencies
  */
 
 import org.gradle.api.artifacts.Dependency
-import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.file.ConfigurableFileTree
-import org.gradle.kotlin.dsl.DependencyHandlerScope
 
 
 //system
@@ -83,22 +81,32 @@ const val lintVer = "26.5.1"
 const val websocketVer = "2.6"
 
 //androidX
-const val lifecycleVer = "2.3.0"
+const val lifecycleVmVer = "2.3.1"
+const val lifecycleExtVer = "2.2.0"
+
 const val fragmentsXVer = "1.2.5"
 const val legacyVer = "1.0.0"
-const val lifecycleExtVer = "2.2.0"
 
 //common
 const val timberVer = "4.7.1"
 
 val androidXLibs = mutableMapOf<String, Pair<Any, String>>().apply {
-    //put("fileTree", Pair(fileTreeFromConfig(mapOf("dir" to "libs", "include" to listOf("*.jar")))!!, "implementation"))
     put("timber", Pair("com.jakewharton.timber:timber:$timberVer", "implementation"))
-    put("lifecycle", Pair("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVer", "implementation"))
+    put("lifecycleVmKtx",
+        Pair("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVmVer", "implementation")
+    )
+    put(
+        "lifecycleExt",
+        Pair("androidx.lifecycle:lifecycle-extensions:$lifecycleExtVer", "implementation")
+    )
     put("fragmentsX", Pair("androidx.fragment:fragment-ktx:$fragmentsXVer", "implementation"))
     put("legacy", Pair("androidx.legacy:legacy-support-v4:$legacyVer", "implementation"))
-    put("lifecycleExtVer", Pair("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleExtVer", "implementation"))
-    put("constraintlayout", Pair("androidx.constraintlayout:constraintlayout:$constraintLayoutVer", "implementation"))
+    put(
+        "constraintlayout",
+        Pair("androidx.constraintlayout:constraintlayout:$constraintLayoutVer", "implementation")
+    )
+
+
 }
 
 val retrofitAndOkHttpLibs = mutableMapOf<String, Pair<Any, String>>().apply {
@@ -111,29 +119,56 @@ val retrofitAndOkHttpLibs = mutableMapOf<String, Pair<Any, String>>().apply {
     put("scalar", Pair("com.squareup.retrofit2:converter-scalars:$retrofitVer", "implementation"))
     //OkHttp3
     put("okHttp", Pair("com.squareup.okhttp3:okhttp:$squareupOkhttpVer", "implementation"))
-    put("loggingInterceptor", Pair("com.squareup.okhttp3:logging-interceptor:$squareupOkhttpVer", "implementation"))
-    put("urlConnection", Pair("com.squareup.okhttp3:okhttp-urlconnection:$squareupOkhttpVer", "implementation"))
+    put(
+        "loggingInterceptor",
+        Pair("com.squareup.okhttp3:logging-interceptor:$squareupOkhttpVer", "implementation")
+    )
+    put(
+        "urlConnection",
+        Pair("com.squareup.okhttp3:okhttp-urlconnection:$squareupOkhttpVer", "implementation")
+    )
 }
 
 val androidMaterial = mutableMapOf<String, Pair<Any, String>>().apply {
     put("material", Pair("com.google.android.material:material:$materialVer", "implementation"))
-    put("constraintLayout", Pair("androidx.constraintlayout:constraintlayout:$constraintLayoutVer", "implementation"))
-    put("dateTimePicker", Pair("com.wdullaer:materialdatetimepicker:$materialDateTimePickerVer", "implementation"))
+    put(
+        "constraintLayout",
+        Pair("androidx.constraintlayout:constraintlayout:$constraintLayoutVer", "implementation")
+    )
+    put(
+        "dateTimePicker",
+        Pair("com.wdullaer:materialdatetimepicker:$materialDateTimePickerVer", "implementation")
+    )
 }
 
 val kotlinLibs = mutableMapOf<String, Pair<Any, String>>().apply {
     put("kotlin", Pair("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVer", "implementation"))
     put("ktx", Pair("androidx.core:core-ktx:$ktxVer", "implementation"))
-    put("coroutines", Pair("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVer", "implementation"))
-    put("coroutinesAndroid", Pair("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVer", "implementation"))
-    put("coroutinesTest", Pair("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVer", "testImplementation"))
+    put(
+        "coroutines",
+        Pair("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVer", "implementation")
+    )
+    put(
+        "coroutinesAndroid",
+        Pair("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVer", "implementation")
+    )
+    put(
+        "coroutinesTest",
+        Pair("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVer", "testImplementation")
+    )
 }
 
 val testLibs = mutableMapOf<String, Pair<Any, String>>().apply {
     put("junit", Pair("junit:junit:$junitVer", "testImplementation"))
     put("junitAndroid", Pair("androidx.test.ext:junit:$junitTestVer", "androidTestImplementation"))
-    put("espresso", Pair("androidx.test.espresso:espresso-core:$espressoVer", "androidTestImplementation"))
-    put("kaspresso", Pair("com.kaspersky.android-components:kaspresso:$kaspressoVer", "testImplementation"))
+    put(
+        "espresso",
+        Pair("androidx.test.espresso:espresso-core:$espressoVer", "androidTestImplementation")
+    )
+    put(
+        "kaspresso",
+        Pair("com.kaspersky.android-components:kaspresso:$kaspressoVer", "testImplementation")
+    )
 
 }
 
@@ -142,22 +177,40 @@ val diLibs = mutableMapOf<String, Pair<Any, String>>().apply {
     put("dagger", Pair("com.google.dagger:dagger:$daggerVer", "implementation"))
     put("daggerCompiler", Pair("com.google.dagger:dagger-compiler:$daggerVer", "kapt"))
     put("daggerAndroid", Pair("com.google.dagger:dagger-android:$daggerVer", "implementation"))
-    put("daggerProcessorAndroid", Pair("com.google.dagger:dagger-android-processor:$daggerVer", "kapt"))
+    put(
+        "daggerProcessorAndroid",
+        Pair("com.google.dagger:dagger-android-processor:$daggerVer", "kapt")
+    )
 }
 
 val javaRxLibs = mutableMapOf<String, Pair<Any, String>>().apply {
     put("rxJava", Pair("io.reactivex.rxjava2:rxjava:$rxJavaVer", "implementation"))
     put("rxAndroid", Pair("com.google.dagger:dagger:$rxAndroidVer", "implementation"))
     put("rxLint", Pair("nl.littlerobots.rxlint:rxlint:$rxLintVer", "implementation"))
-    put("rxJava2Extention", Pair("com.github.akarnokd:rxjava2-extensions:$rxJava2ExtentionVer", "implementation"))
+    put(
+        "rxJava2Extention",
+        Pair("com.github.akarnokd:rxjava2-extensions:$rxJava2ExtentionVer", "implementation")
+    )
 
 }
 
 val exoplayer = mutableMapOf<String, Pair<Any, String>>().apply {
-    put("exoPlayerCore", Pair("com.google.android.exoplayer:exoplayer-core:$exoplayerVer", "implementation"))
-    put("exoPlayerUi", Pair("com.google.android.exoplayer:exoplayer-ui:$exoplayerVer", "implementation"))
-    put("exoPlayerHls", Pair("com.google.android.exoplayer:exoplayer-hls:$exoplayerVer", "implementation"))
-    put("exoPlayerOkHttp", Pair("com.google.android.exoplayer:extension-okhttp:$exoplayerVer", "implementation"))
+    put(
+        "exoPlayerCore",
+        Pair("com.google.android.exoplayer:exoplayer-core:$exoplayerVer", "implementation")
+    )
+    put(
+        "exoPlayerUi",
+        Pair("com.google.android.exoplayer:exoplayer-ui:$exoplayerVer", "implementation")
+    )
+    put(
+        "exoPlayerHls",
+        Pair("com.google.android.exoplayer:exoplayer-hls:$exoplayerVer", "implementation")
+    )
+    put(
+        "exoPlayerOkHttp",
+        Pair("com.google.android.exoplayer:extension-okhttp:$exoplayerVer", "implementation")
+    )
 }
 
 val lint = mutableMapOf<String, Pair<Any, String>>().apply {
@@ -167,39 +220,44 @@ val lint = mutableMapOf<String, Pair<Any, String>>().apply {
 }
 
 val lottie = Pair<Any, String>("com.airbnb.android:lottie:$lottieVer", "implementation")
-val squareupPicasso = Pair<Any, String>("com.squareup.picasso:picasso:$squareupPicassoVer", "implementation")
-val youtube = Pair<Any, String>("com.google.youtube:YouTubeAndroidPlayerApi:$youtubeVer", "implementation")
-val websocket = Pair<Any, String>("com.neovisionaries:nv-websocket-client:$websocketVer", "implementation")
+val squareupPicasso =
+    Pair<Any, String>("com.squareup.picasso:picasso:$squareupPicassoVer", "implementation")
+val youtube =
+    Pair<Any, String>("com.google.youtube:YouTubeAndroidPlayerApi:$youtubeVer", "implementation")
+val websocket =
+    Pair<Any, String>("com.neovisionaries:nv-websocket-client:$websocketVer", "implementation")
+
+
+/**
+ * Impl work as implementation operator
+ *
+ * @param depAndType Pair<String as "androidx.core:core-ktx:$ktxVer", String as "implementation">
+ * @return [Dependency]
+ */
+fun Project.impl(depAndType: Pair<Any, String>): Dependency? {
+    return this.dependencies.add(depAndType.second, depAndType.first)
+}
+
+/**
+ * setting FileTree dependency
+ *
+ * @param args Map<String as "dir" to "libs", * as "include" to listOf("*.jar")>
+ * @return [ConfigurableFileTree]
+ *
+ */
+fun Project.fileTreeFromConfig(args: Map<String, *>): ConfigurableFileTree? = this.fileTree(args)
+
+/**
+ * Impl map with libs
+ * @param map build from put("rxJava", Pair("io.reactivex.rxjava2:rxjava:$rxJavaVer", "implementation")) instructions
+ * @return dependencies
+ *
+ */
+fun Project.implMap(map: Map<String, Pair<Any, String>>) {
+    map.values.forEach { impl(it) }
+}
 
 fun Project.initLibDependencies() {
-
-    /**
-     * Impl work as implementation operator
-     *
-     * @param depAndType Pair<String as "androidx.core:core-ktx:$ktxVer", String as "implementation">
-     * @return [Dependency]
-     */
-    fun DependencyHandler.impl(depAndType: Pair<Any, String>): Dependency? {
-        return project.let { add(depAndType.second, depAndType.first) }
-    }
-
-
-    /**
-     * Impl map with libs
-     *
-     * @param map String as "kotlin", Pair<String as"androidx.core:core-ktx:$ktxVer",String as "implementation">
-     */
-    fun DependencyHandlerScope.implMap(map: Map<String, Pair<Any, String>>) {
-        map.values.forEach { impl(it) }
-    }
-
-    /**
-     * work as fileTree in function in gradle file
-     * implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-     */
-
-    fun fileTreeFromConfig(args: Map<String, *>): ConfigurableFileTree? =
-        project.fileTree(args)
 
     dependencies {
         fileTreeFromConfig(mapOf("dir" to "libs", "include" to listOf("*.jar")))!!

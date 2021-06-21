@@ -5,7 +5,8 @@ import javax.inject.Singleton
 
 @Component(dependencies = [NetworkFeatureDependencies::class], modules = [NetworkModule::class])
 @Singleton
-internal interface NetworkComponent : NetworkFeatureApi {
+internal interface
+NetworkComponent : NetworkFeatureApi {
 
     companion object {
         fun initAndGet(networkDependencies: NetworkFeatureDependencies): NetworkComponent {
