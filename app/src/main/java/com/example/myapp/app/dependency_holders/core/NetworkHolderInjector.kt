@@ -1,16 +1,16 @@
 package com.example.myapp.app.dependency_holders.core
 
-import com.example.common_utils.config.ConfigProvider
-import com.example.common_utils.modul_injection.BaseDependencyHolder
-import com.example.common_utils.modul_injection.BaseFeatureDependencies
-import com.example.common_utils.modul_injection.DependencyHolder1
+import com.example.common_api.config.ConfigProvider
+import com.example.modulinjection.BaseDependencyHolder
+import com.example.modulinjection.BaseFeatureDependencies
+import com.example.modulinjection.DependencyHolder1
 import com.example.myapp.di.AppComponentHolder
 import com.example.myapp.di.AppFeatureApi
-import com.example.network.di.NetworkComponentHolder
-import com.example.network.di.NetworkFeatureDependencies
+import com.example.network_impl.di.NetworkComponentHolder
+import com.example.network_impl.di.NetworkFeatureDependencies
 
 object NetworkHolderInjector {
-    fun network_Injection(){
+    fun networkInjection(){
         NetworkComponentHolder.dependencyProvider = {
             class NetworkComponentDependencyHolder(
                 override val block: (BaseDependencyHolder<NetworkFeatureDependencies>, api1: AppFeatureApi) -> NetworkFeatureDependencies

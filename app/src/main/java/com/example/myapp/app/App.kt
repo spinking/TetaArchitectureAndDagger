@@ -8,12 +8,5 @@ class App : Application() {
         super.onCreate()
         LoggerHandler.initTimber()
         DependencyHandler.initDependency(applicationContext)
-
-            // настроить навигатор гугл
-            // настроить корутины
-            // настроить lce патерн и ретрофит
-            // настроить livedata patern
-        // настроить сервис пушей с диплинками
-            //
     }
 }

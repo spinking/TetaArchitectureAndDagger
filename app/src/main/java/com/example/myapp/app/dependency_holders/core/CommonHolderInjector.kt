@@ -1,15 +1,15 @@
 package com.example.myapp.app.dependency_holders.core
 
-import com.example.common_utils.di.CommonComponentHolder
-import com.example.common_utils.di.CommonFeatureDependencies
-import com.example.common_utils.modul_injection.BaseDependencyHolder
-import com.example.common_utils.modul_injection.BaseFeatureDependencies
-import com.example.common_utils.modul_injection.DependencyHolder1
+import com.example.common_impl.di.CommonComponentHolder
+import com.example.common_impl.di.CommonFeatureDependencies
+import com.example.modulinjection.BaseDependencyHolder
+import com.example.modulinjection.BaseFeatureDependencies
+import com.example.modulinjection.DependencyHolder1
 import com.example.myapp.di.AppComponentHolder
 import com.example.myapp.di.AppFeatureApi
 
 object CommonHolderInjector {
-    fun common_Injection(){
+    fun commonInjection(){
         CommonComponentHolder.dependencyProvider = {
             class CommonComponentDependencyHolder(
                 override val block: (BaseDependencyHolder<CommonFeatureDependencies>, api1: AppFeatureApi) -> CommonFeatureDependencies

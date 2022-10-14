@@ -21,7 +21,6 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.file.ConfigurableFileTree
 
-
 //system
 const val gradleConfVer = "4.1.2"
 const val minSdkVersionConf = 21

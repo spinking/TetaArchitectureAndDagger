@@ -4,26 +4,30 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="PLATFORM" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="1.8 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/common_utils" />
+            <option value="$PROJECT_DIR$/core/commonapi" />
+            <option value="$PROJECT_DIR$/core/commonimpl" />
             <option value="$PROJECT_DIR$/core/database" />
-            <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/core/modulinjection" />
+            <option value="$PROJECT_DIR$/core/networkapi" />
+            <option value="$PROJECT_DIR$/core/networkimpl" />
             <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/main" />
-            <option value="$PROJECT_DIR$/feature/onboarding" />
-            <option value="$PROJECT_DIR$/feature/profile" />
+            <option value="$PROJECT_DIR$/feature/afeatureapi" />
+            <option value="$PROJECT_DIR$/feature/afeatureimpl" />
+            <option value="$PROJECT_DIR$/feature/bfeatureapi" />
+            <option value="$PROJECT_DIR$/feature/bfeatureimpl" />
+            <option value="$PROJECT_DIR$/feature/cfeatureapi" />
+            <option value="$PROJECT_DIR$/feature/cfeatureimpl" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

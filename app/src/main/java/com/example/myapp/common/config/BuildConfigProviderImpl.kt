@@ -1,6 +1,6 @@
 package com.example.myapp.common.config
 
-import com.example.common_utils.config.ConfigProvider
+import com.example.common_api.config.ConfigProvider
 import com.example.myapp.BuildConfig
 
 class BuildConfigProviderImpl() : ConfigProvider {

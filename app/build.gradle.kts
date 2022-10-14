@@ -42,12 +42,18 @@ android {
 }
 initLibDependencies()
 dependencies {
+    implementation(project(":core:modulinjection"))
+
     //core
-    implementation(project(":core:common_utils"))
     implementation(project(":core:database"))
-    implementation(project(":core:network"))
+    implementation(project(":core:commonimpl"))
+    implementation(project(":core:commonapi"))
+    implementation(project(":core:networkimpl"))
+    implementation(project(":core:networkapi"))
+    implementation(project(":feature:afeatureimpl"))
+    implementation(project(":feature:bfeatureimpl"))
+    implementation(project(":feature:cfeatureimpl"))
+
+
     //feature
-    implementation(project(":feature:main"))
-    implementation(project(":feature:onboarding"))
-    implementation(project(":feature:profile"))
 }

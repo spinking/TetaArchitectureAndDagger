@@ -1,26 +1,25 @@
 package com.example.myapp.app
 
 import android.content.Context
-import com.example.myapp.app.dependency_holders.core.AppHolderInjector.app_Injection
-import com.example.myapp.app.dependency_holders.core.CommonHolderInjector.common_Injection
-import com.example.myapp.app.dependency_holders.core.DatabaseHolderInjector.database_Injection
-import com.example.myapp.app.dependency_holders.core.NetworkHolderInjector.network_Injection
-import com.example.myapp.app.dependency_holders.feature.MainHolderInjector.main_Injection
-import com.example.myapp.app.dependency_holders.feature.OnboardingHolderInjector.onboarding_Injection
-import com.example.myapp.app.dependency_holders.feature.ProfileHolderInjector.profile_Injection
+import com.example.myapp.app.dependency_holders.core.AppHolderInjector.appInjection
+import com.example.myapp.app.dependency_holders.core.CommonHolderInjector.commonInjection
+import com.example.myapp.app.dependency_holders.core.DatabaseHolderInjector.databaseInjection
+import com.example.myapp.app.dependency_holders.core.NetworkHolderInjector.networkInjection
+import com.example.myapp.app.dependency_holders.feature.AFeatureHolderInjector.aFeatureInjection
+import com.example.myapp.app.dependency_holders.feature.BFeatureHolderInjector.bFeatureInjection
+import com.example.myapp.app.dependency_holders.feature.CFeatureHolderInjector.cFeatureInjection
 
 object DependencyHandler {
     fun initDependency(appContext: Context){
         //app
-        app_Injection(appContext)
+        appInjection(appContext)
         //core
-        common_Injection()
-        database_Injection()
-        network_Injection()
+        commonInjection()
+        databaseInjection()
+        networkInjection()
         //feature
-        main_Injection()
-        onboarding_Injection()
-        profile_Injection()
-
+        aFeatureInjection()
+        bFeatureInjection()
+        cFeatureInjection()
     }
 }

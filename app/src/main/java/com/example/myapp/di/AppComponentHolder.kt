@@ -1,11 +1,11 @@
 package com.example.myapp.di
 
-import com.example.common_utils.config.ConfigProvider
-import com.example.common_utils.modul_injection.BaseFeatureAPI
-import com.example.common_utils.modul_injection.BaseFeatureDependencies
-import com.example.common_utils.modul_injection.ComponentHolder
-import com.example.common_utils.modul_injection.ComponentHolderDelegate
-import com.example.common_utils.time_utils.TimeProvider
+import com.example.common_api.config.ConfigProvider
+import com.example.common_api.time_utils.TimeProvider
+import com.example.modulinjection.BaseFeatureAPI
+import com.example.modulinjection.BaseFeatureDependencies
+import com.example.modulinjection.ComponentHolder
+import com.example.modulinjection.ComponentHolderDelegate
 import com.example.myapp.common.app.ApplicationProvider
 
 object AppComponentHolder : ComponentHolder<AppFeatureApi, AppFeatureDependencies> {

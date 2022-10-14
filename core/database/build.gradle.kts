@@ -11,7 +11,7 @@ android{
 }
 
 initLibDependencies()
-
 dependencies {
-    implementation(project(":core:common_utils"))
+    implementation(project(":core:modulinjection"))
 }
+
