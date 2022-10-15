@@ -6,6 +6,8 @@ include (":feature:cfeatureimpl")
 include (":feature:cfeatureapi")
 include (":feature:dfeatureimpl")
 include (":feature:dfeatureapi")
+include (":feature:efeatureimpl")
+include (":feature:efeatureapi")
 
 include (":core:modulinjection")
 include (":core:commonimpl")

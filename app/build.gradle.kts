@@ -50,11 +50,10 @@ dependencies {
     implementation(project(":core:commonapi"))
     implementation(project(":core:networkimpl"))
     implementation(project(":core:networkapi"))
+    //feature
     implementation(project(":feature:afeatureimpl"))
     implementation(project(":feature:bfeatureimpl"))
     implementation(project(":feature:cfeatureimpl"))
     implementation(project(":feature:dfeatureimpl"))
-
-
-    //feature
+    implementation(project(":feature:efeatureimpl"))
 }

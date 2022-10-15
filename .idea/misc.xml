@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StudioProjects/NewMvvmArch_homeWork/NewMvvmArch/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/StudioProjects/NewMvvmArch_homeWork/NewMvvmArch/feature/afeatureimpl/src/main/res/layout/a_feature_fragment.xml" value="0.5541666666666667" />
+        <entry key="..\:/StudioProjects/NewMvvmArch_homeWork/NewMvvmArch/feature/bfeatureimpl/src/main/res/layout/b_feature_fragment.xml" value="0.3319746376811594" />
+        <entry key="..\:/StudioProjects/NewMvvmArch_homeWork/NewMvvmArch/feature/efeatureimpl/src/main/res/layout/e_feature_fragment.xml" value="0.5541666666666667" />
         <entry key="feature/a-feature-impl/src/main/res/layout/a_feature_fragment.xml" value="0.2033514492753623" />
         <entry key="feature/feature-a/src/main/res/layout/main_fragment.xml" value="0.2033514492753623" />
       </map>

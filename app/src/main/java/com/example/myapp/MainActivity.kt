@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
-import com.example.a_feature_impl.AFeatureFragment
+import com.example.e_feature_impl.EFeatureFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        currentFragment = AFeatureFragment.getInstance()
+        currentFragment = EFeatureFragment.newInstance()
         supportFragmentManager
             .beginTransaction()
             .add(R.id.frameLayout, currentFragment!!, "LOGIN_TAG")

@@ -9,6 +9,7 @@ import com.example.myapp.app.dependency_holders.feature.AFeatureHolderInjector.a
 import com.example.myapp.app.dependency_holders.feature.BFeatureHolderInjector.bFeatureInjection
 import com.example.myapp.app.dependency_holders.feature.CFeatureHolderInjector.cFeatureInjection
 import com.example.myapp.app.dependency_holders.feature.DFeatureHolderInjector.dFeatureInjection
+import com.example.myapp.app.dependency_holders.feature.EFeatureHolderInjector.eFeatureInjection
 
 object DependencyHandler {
     fun initDependency(appContext: Context){
@@ -23,5 +24,6 @@ object DependencyHandler {
         bFeatureInjection()
         cFeatureInjection()
         dFeatureInjection()
+        eFeatureInjection()
     }
 }
