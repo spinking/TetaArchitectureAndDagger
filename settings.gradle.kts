@@ -4,6 +4,8 @@ include (":feature:bfeatureimpl")
 include (":feature:bfeatureapi")
 include (":feature:cfeatureimpl")
 include (":feature:cfeatureapi")
+include (":feature:dfeatureimpl")
+include (":feature:dfeatureapi")
 
 include (":core:modulinjection")
 include (":core:commonimpl")

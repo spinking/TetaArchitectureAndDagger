@@ -53,6 +53,7 @@ dependencies {
     implementation(project(":feature:afeatureimpl"))
     implementation(project(":feature:bfeatureimpl"))
     implementation(project(":feature:cfeatureimpl"))
+    implementation(project(":feature:dfeatureimpl"))
 
 
     //feature

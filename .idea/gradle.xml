@@ -26,6 +26,8 @@
             <option value="$PROJECT_DIR$/feature/bfeatureimpl" />
             <option value="$PROJECT_DIR$/feature/cfeatureapi" />
             <option value="$PROJECT_DIR$/feature/cfeatureimpl" />
+            <option value="$PROJECT_DIR$/feature/dfeatureapi" />
+            <option value="$PROJECT_DIR$/feature/dfeatureimpl" />
           </set>
         </option>
       </GradleProjectSettings>

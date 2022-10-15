@@ -8,6 +8,7 @@ import com.example.myapp.app.dependency_holders.core.NetworkHolderInjector.netwo
 import com.example.myapp.app.dependency_holders.feature.AFeatureHolderInjector.aFeatureInjection
 import com.example.myapp.app.dependency_holders.feature.BFeatureHolderInjector.bFeatureInjection
 import com.example.myapp.app.dependency_holders.feature.CFeatureHolderInjector.cFeatureInjection
+import com.example.myapp.app.dependency_holders.feature.DFeatureHolderInjector.dFeatureInjection
 
 object DependencyHandler {
     fun initDependency(appContext: Context){
@@ -21,5 +22,6 @@ object DependencyHandler {
         aFeatureInjection()
         bFeatureInjection()
         cFeatureInjection()
+        dFeatureInjection()
     }
 }
